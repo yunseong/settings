@@ -10,8 +10,6 @@ ZSH_THEME="robbyrussell"
 # Example aliases
 alias zshconfig="vi ~/.zshrc"
 alias ohmyzsh="vi ~/.oh-my-zsh"
-alias mou="/Applications/Mou.app/Contents/MacOS/Mou"
-alias sublime="/Applications/Sublime\ Text\ 2.app/Contents/MacOS/Sublime\ Text\ 2"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -52,16 +50,6 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
-# Path config
-export JAVA_HOME=$(/usr/libexec/java_home)
-export HADOOP_INSTALL=/usr/local/hadoop-2.2.0
-export HADOOP_CONFIG=$HADOOP_INSTALL/etc/hadoop
-export STORM_INSTALL=/usr/local/storm-0.9.0.1
-export SPARK_INSTALL=/usr/local/spark-0.9.0-incubating
-export TACHYON=/usr/local/tachyon-0.4.1
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
-export PATH=$PATH:$HADOOP_INSTALL/bin:$HADOOP_INSTALL/sbin:$HADOOP_CONFIG:$STORM_INSTALL/bin:$SPARK_INSTALL/bin:$TACHYON/bin
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
