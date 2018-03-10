@@ -1,6 +1,5 @@
-" Prerequisite
-" Install Vundle plugin from https://github.com/VundleVim/Vundle.vim
-
+" First you need to install vundle via 
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -48,7 +47,9 @@ set smarttab
 set shiftwidth=2
 set tabstop=2
 set nu
+set expandtab
 
+set hlsearch 
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
