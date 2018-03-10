@@ -1,63 +1,44 @@
-" First you need to install vundle via 
-" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" Thanks to https://dougblack.io/words/a-good-vimrc.html
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+""" Colors
+syntax enable       " enable syntax processing
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+""" Spaces & Tabs
+set tabstop=2       " number of visual spaces per TAB
+set softtabstop=2   " number of spaces in tab when editing
+set expandtab       " tabs are spaces
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-" Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-"
-Plugin 'scrooloose/nerdtree'
+""" UI Config
+set number              " show line numbers
+set showcmd             " show command in bottom bar
+set cursorline          " highlight current line
+filetype indent on      " load filetype-specific indent files
+set wildmenu            " visual autocomplete for command menu
+set lazyredraw          " redraw only when we need to.
+set showmatch           " highlight matching [{()}]
 
-" Give a shortcut key to NERD Tree
-map <F2> :NERDTreeToggle<CR>
+""" Leader
+let mapleader=","       " leader is comma
 
-Plugin 'ascenator/L9', {'name': 'newL9'}
-"Plugin 'Valloric/YouCompleteMe'
-"
+""" Searching
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-syntax enable
-filetype plugin indent on    " required
+" turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR> 
 
-" Be smart when using tabs ;)
-set smarttab
-"
-" " 1 tab == 2 spaces
-set shiftwidth=2
-set tabstop=2
-set nu
-set expandtab
+""" Launch Config
+call pathogen#infect()  " use pathogen
 
-set hlsearch 
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+
+""" Yunseong
+" Start NERDTree when no file is specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" Start NERDTree when opening up a directory 
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+
+nmap <F2> :NERDTreeToggle<CR>
+
