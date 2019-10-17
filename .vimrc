@@ -1,10 +1,8 @@
 """"" 
 """"" Thanks to https://dougblack.io/words/a-good-vimrc.html 
-""""" to install,
-""""" mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+""""" 
 """"" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 """"" Launch vim and run :PluginInstall
-
 
 """ Colors
 syntax enable       " enable syntax processing
@@ -36,13 +34,13 @@ set hlsearch            " highlight matches
 nnoremap <leader><space> :nohlsearch<CR> 
 
 """ Launch Config
-call pathogen#infect()  " use pathogen
+"call pathogen#infect()  " use pathogen
 
 
 """""
 """"" Added by Yunseong
 """""
-
+set encoding=utf-8
 """ NERDTree
 " Start NERDTree when opening up a directory 
 autocmd StdinReadPre * let s:std_in=1
@@ -66,17 +64,17 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Yggdroot/indentLine'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'mhinz/vim-signify'
-Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
+"Plugin 'Valloric/YouCompleteMe'
+"Plugin 'mhinz/vim-signify'
+"Plugin 'vim-airline/vim-airline'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
+"Plugin 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
   """ Plugin 'L9'
 " Git plugin not hosted on GitHub
