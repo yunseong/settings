@@ -1,6 +1,9 @@
 """"" 
 """"" Thanks to https://dougblack.io/words/a-good-vimrc.html 
-""""" 
+""""" to install,
+""""" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+""""" Launch vim and run :PluginInstall
+
 
 """ Colors
 syntax enable       " enable syntax processing
