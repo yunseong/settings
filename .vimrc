@@ -1,6 +1,7 @@
 """"" 
 """"" Thanks to https://dougblack.io/words/a-good-vimrc.html 
 """"" to install,
+""""" mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 """"" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 """"" Launch vim and run :PluginInstall
 
